@@ -3,7 +3,7 @@ import { useState } from "react";
 // ============================================================
 // ArchiveTesDocs — UI Redesign Mockups
 // Design: Modern archival — structured, warm, professional
-// Fonts: DM Sans + Playfair Display
+// Fonts: DM Sans + Lexend Deca (700)
 // Palette: Navy, archival blue, warm sand, gold accent
 // ============================================================
 
@@ -204,7 +204,7 @@ const ViewHome = () => {
   return (
     <div>
       <div style={{ marginBottom: 28 }}>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Tableau de bord</h1>
+        <h1 style={{ fontFamily: "'Lexend Deca', sans-serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Tableau de bord</h1>
         <p style={{ color: C.g500, fontSize: 14, margin: "4px 0 0" }}>Vue d'ensemble de vos demandes d'archives</p>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 32 }}>
@@ -278,7 +278,7 @@ const ViewUsers = () => {
   return (
     <div>
       <div style={{ marginBottom: 20 }}>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Gérer la base archives</h1>
+        <h1 style={{ fontFamily: "'Lexend Deca', sans-serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Gérer la base archives</h1>
         <p style={{ color: C.g500, fontSize: 14, margin: "4px 0 0" }}>Administration des utilisateurs et paramètres</p>
       </div>
       <TabBar tabs={tabs} active={tab} onChange={setTab} />
@@ -344,7 +344,7 @@ const ViewServices = () => {
   return (
     <div>
       <div style={{ marginBottom: 20 }}>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Paramétrage — Saisie</h1>
+        <h1 style={{ fontFamily: "'Lexend Deca', sans-serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Paramétrage — Saisie</h1>
         <p style={{ color: C.g500, fontSize: 14, margin: "4px 0 0" }}>Configuration des référentiels de saisie</p>
       </div>
       <TabBar tabs={subTabs} active={tab} onChange={setTab} />
@@ -397,7 +397,7 @@ const ViewTransferQueue = () => {
   return (
     <div>
       <div style={{ marginBottom: 20 }}>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Gestion des demandes</h1>
+        <h1 style={{ fontFamily: "'Lexend Deca', sans-serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Gestion des demandes</h1>
         <p style={{ color: C.g500, fontSize: 14, margin: "4px 0 0" }}>Traitement des demandes de transfert et opérations</p>
       </div>
       <TabBar tabs={mainTabs} active={0} />
@@ -502,7 +502,7 @@ const ViewTransferModal = () => {
   return (
     <div>
       <div style={{ marginBottom: 20 }}>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Tableau de bord</h1>
+        <h1 style={{ fontFamily: "'Lexend Deca', sans-serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Tableau de bord</h1>
         <p style={{ color: C.g500, fontSize: 14, margin: "4px 0 0" }}>
           Exemple de modale — <button onClick={() => setOpen(true)} style={{ color: C.blue, border: "none", background: "none", cursor: "pointer", fontFamily: "'DM Sans',sans-serif", fontSize: 14, textDecoration: "underline" }}>rouvrir la modale</button>
         </p>
@@ -529,7 +529,7 @@ const ViewTransferModal = () => {
               alignItems: "center", borderBottom: `1px solid ${C.g200}`, background: C.navy,
             }}>
               <div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 700, color: C.white }}>Demandes de transfert</div>
+                <div style={{ fontFamily: "'Lexend Deca', sans-serif", fontSize: 18, fontWeight: 700, color: C.white }}>Demandes de transfert</div>
                 <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 2 }}>{items.length} demandes en attente</div>
               </div>
               <button onClick={() => setOpen(false)} style={{
@@ -572,7 +572,7 @@ const ViewArchiveForm = () => (
   <div>
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
       <div>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Transférer une unité d'archives</h1>
+        <h1 style={{ fontFamily: "'Lexend Deca', sans-serif", fontSize: 24, fontWeight: 700, color: C.navy, margin: 0 }}>Transférer une unité d'archives</h1>
         <p style={{ color: C.g500, fontSize: 14, margin: "4px 0 0" }}>Saisie d'une nouvelle unité pour transfert</p>
       </div>
       <div style={{
@@ -673,7 +673,7 @@ export default function App() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: C.sand, minHeight: "100vh" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Lexend+Deca:wght@700&display=swap');
         * { box-sizing: border-box; }
         input:focus, select:focus, textarea:focus { border-color: ${C.blue} !important; box-shadow: 0 0 0 3px ${C.bluePale}; }
         button:hover { opacity: 0.88; }
