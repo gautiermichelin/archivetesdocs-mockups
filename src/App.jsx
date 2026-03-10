@@ -33,6 +33,15 @@ const C = {
 
 const VIEWS = ["Accueil", "Utilisateurs", "Services", "File de transfert", "Demandes (modale)", "Saisie d'archive"];
 
+const BEFORE_IMAGES = [
+  "before/accueil.png",
+  "before/utilisateurs.png",
+  "before/services.png",
+  "before/transfert.png",
+  "before/demandes.png",
+  "before/saisie.png",
+];
+
 const Icon = ({ name, size = 18, color = "currentColor" }) => {
   const p = { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: color, strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" };
   const d = {
@@ -653,6 +662,7 @@ const ViewArchiveForm = () => (
 export default function App() {
   const [view, setView] = useState(0);
   const [sideItem, setSideItem] = useState(0);
+  const [showBefore, setShowBefore] = useState(false);
   const sidebarItems = [
     { icon: "home", label: "Accueil" },
     { icon: "edit", label: "Saisir" },
@@ -725,7 +735,39 @@ export default function App() {
             </div>
           </div>
         </nav>
-        <main style={{ flex: 1, padding: 32, overflow: "auto", maxHeight: "100vh" }}>
+        <main style={{ flex: 1, padding: 32, overflow: "auto", maxHeight: "100vh", position: "relative" }}>
+          <button onClick={() => setShowBefore(true)} style={{
+            position: "fixed", top: 16, right: 24, zIndex: 900,
+            background: C.navy, color: C.white, border: "none",
+            borderRadius: 8, padding: "8px 16px", fontSize: 13,
+            fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
+            cursor: "pointer", letterSpacing: 0.5,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
+          }}>[ AVANT ]</button>
+
+          {showBefore && (
+            <div onClick={() => setShowBefore(false)} style={{
+              position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
+              background: "rgba(15,27,45,0.85)", backdropFilter: "blur(6px)",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              zIndex: 1001, cursor: "zoom-out",
+            }}>
+              <div style={{ position: "relative", maxWidth: "90vw", maxHeight: "90vh" }}>
+                <img
+                  src={`${import.meta.env.BASE_URL}${BEFORE_IMAGES[view]}`}
+                  alt={`Capture avant — ${VIEWS[view]}`}
+                  style={{ maxWidth: "90vw", maxHeight: "85vh", borderRadius: 12, boxShadow: "0 20px 60px rgba(0,0,0,0.4)" }}
+                />
+                <div style={{
+                  textAlign: "center", marginTop: 12, color: "rgba(255,255,255,0.7)",
+                  fontSize: 14, fontFamily: "'DM Sans', sans-serif",
+                }}>
+                  Interface actuelle — {VIEWS[view]} · <span style={{ color: "rgba(255,255,255,0.4)" }}>cliquer pour fermer</span>
+                </div>
+              </div>
+            </div>
+          )}
+
           {views[view]}
           <div style={{ textAlign: "center", padding: "32px 0 16px", fontSize: 12, color: C.g400 }}>
             ArchiveTesDocs 2025 — Maquette de refonte UI
