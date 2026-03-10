@@ -66,21 +66,13 @@ const Icon = ({ name, size = 18, color = "currentColor" }) => {
 // ---- Shared Components ----
 
 const Logo = () => (
-  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-    <div style={{
-      width: 38, height: 38, borderRadius: 10,
-      background: `linear-gradient(135deg, ${C.blue} 0%, ${C.navy} 100%)`,
-      display: "flex", alignItems: "center", justifyContent: "center",
-      color: C.white, fontFamily: "'Playfair Display', serif",
-      fontSize: 20, fontWeight: 700,
-    }}>A</div>
-    <div>
-      <div style={{
-        fontFamily: "'Playfair Display', serif", fontWeight: 700,
-        fontSize: 17, color: C.navy, lineHeight: 1.1, letterSpacing: -0.3,
-      }}>Archive<span style={{ color: C.blue }}>Tes</span>Docs</div>
-      <div style={{ fontSize: 10, color: C.g400, letterSpacing: 1.2, textTransform: "uppercase", marginTop: 1 }}>Gestion d'archives</div>
-    </div>
+  <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
+    <img
+      src="https://demo-archimage.ideesculture.fr/img/Logo_Archive_Tes_Docs.svg"
+      alt="ArchiveTesDocs"
+      style={{ width: "100%", maxWidth: 200, height: "auto" }}
+    />
+    <div style={{ fontSize: 10, color: C.g400, letterSpacing: 1.5, textTransform: "uppercase" }}>Gestion d'archives</div>
   </div>
 );
 
